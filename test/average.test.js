@@ -14,3 +14,7 @@ it('reports the average as NaN on an empty list', ()=> {
 it('ignores NaN in the input', ()=> {
   expect(average([1, NaN, 2])).to.be.approximately(1.5, 0.01);
 });
+
+it('ignores outliers - values lesser than -20 and greater than 60', ()=> {
+  expect(average([-80, 35, 37, 78, 33, 36, 34])).to.be.approximately(35, 0.01);
+});
